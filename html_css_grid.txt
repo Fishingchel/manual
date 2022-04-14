@@ -1,0 +1,52 @@
+Убрать все отступы на странице:
+* {
+   padding: 0px;
+   margin: 0px;
+   box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+}
+
+Отцентровать:
+.test {
+   margin: 0 auto;
+}
+
+======================
+Включить grid
+.wrapper {
+	display: grid;
+	grid-template-columns: 70% 30%; - количество столбцов с шириной; или
+	grid-template-columns: 1fr 2fr 1fr; - три стоблца, средний в два раза шире боковых; или
+	grid-template-columns:	rtepeat(3, 1fr); - три столбца одной ширины
+	
+	grid-gap: 1em; - отступы между блоками
+	grid-column-gap: 1em; - отступы по горизонтали
+	grid-row-gap: 1em; - отступы по вертикали
+
+	grid-auto-row: 100px; - высота блока
+	grid-auto-row: minmax(100px, auto); - минимальная высота 100px, максимальная - пока не заполнится блок.
+
+	justify-items: (start|end|center|stretch) - выравнивание внутри грид-блока по горизонатли
+	justify-content: - выравнивание по горизонтали отностилельно самого грид-контейнера (внтри всего контейнера)
+	и здесь добавлляются свойства space-between (одинаковое расстояние между блоками), space-around (одинаковое
+	расстояние вокруг блоков), space-evenly (одинаковое расстояние со всех сторон)
+	justify-self: - выравнивание отдельного бокса
+	align-items:
+	align-content: - тоже что и для justify, но только по вертикали 
+
+	grid-column: 1/3; - растягивает блок от 1-ого до 3-его столбца невключительно
+	grid-row: тоже что и на верху только для строк
+	еще есть слово span - просто число объединений, без дробей, например grid-column: span 9; - 9-ьб частей объединили
+}
+
+На стороне html включаем:
+<div class="wrapper">
+	<div>(первый div)</div>	<div>(первый div)</div>	<div>(второй div)</div>	<div>(и т.д.)</div>
+</div>
+
+Подробнее   https://habr.com/ru/company/macloud/blog/564182/
+================
